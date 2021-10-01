@@ -77,12 +77,12 @@
                   <a class="dropdown-item text-secondary" href="<?= base_url('tests/update/' . $test['testId']) ?>"> <i class="bi bi-pencil-square"></i> &nbsp; Edit</a>
                 </li>
                 <li>
+                  <a class="dropdown-item text-secondary" target="_blank" href="<?= base_url('tests/download_pdf/' . $test['testId']) ?>"> <i class="bi bi-box-arrow-in-down"></i> &nbsp; Download</a>
+                </li>
+                <li>
                   <?= anchor(base_url("tests/delete/"  . $test['testId']), '<i class="bi bi-x-circle"></i> Delete', array('onclick' => "return confirm('Do you want delete this test?!')", 'class' => 'dropdown-item text-secondary')) ?>
                 </li>
               </ul>
-              <button class="btn btn-sm btn-outline-seconadry border-0" id="copy-btn-<?= $test['testId'] ?>" data-bs-toggle="tooltip" data-bs-placement="top" title="Copy url">
-                <i class="bi bi-clipboard-check" id="copy-btn-<?= $test['testId'] ?>"></i></button>
-              <input type="hidden" id="url-<?= $test['testId'] ?>" value="<?= base_url('reservations/register/' . $test['testId']) ?>">
             </div>
           </td>
         </tr>

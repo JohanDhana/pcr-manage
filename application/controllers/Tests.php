@@ -19,11 +19,9 @@ class Tests extends CI_Controller
 
 	public function view($id)
 	{
-		$data['package'] = $this->tests_model->get_event_by_id($id)[0];
+		$data['test'] = $this->tests_model->get_test_by_id($id);
 
-		$this->load->view('templates/header');
 		$this->load->view('tests/view', $data);
-		$this->load->view('templates/footer');
 	}
 
 
@@ -48,9 +46,6 @@ class Tests extends CI_Controller
 			$this->load->view('tests/create', $data);
 			$this->load->view('templates/footer');
 		} else {
-			// $html = $this->load->view('email_template/thank', [], TRUE);
-			// $this->load->library('pdf');
-			// $this->pdf->createPDF($html, 'mypdf', false);
 			$this->tests_model->create_test();
 			header("Refresh:0");
 		}
@@ -115,15 +110,25 @@ class Tests extends CI_Controller
 		redirect('tests/list');
 	}
 
-	public function thank_email()
+	public function download_pdf($id)
 	{
-		$id = $this->uri->segment(3);
-		$reservations	= $this->reservation_model->get_reservations_for_event($id);
-		foreach ($reservations as $key => $reservation) {
-			$email_content = $this->load->view('email_template/thank', [], TRUE);
-			// Tests_model::send_email($reservation['email'], $reservation['name'], $email_content);
-		}
-		redirect('tests/list');
+		$data['test'] = $this->tests_model->get_test_by_id($id);
+		$html = $this->load->view('email_template/pdf-template', $data, TRUE);
+		$this->load->library('pdf');
+		$pdf = new Pdf('P', 'mm', 'A4', true, 'UTF-8', false);
+		$pdf->SetTitle('My Title');
+		$pdf->SetHeaderMargin(30);
+		$pdf->SetTopMargin(20);
+		$pdf->setFooterMargin(20);
+		$pdf->SetAutoPageBreak(true);
+		$pdf->SetAuthor('Author');
+		$pdf->SetDisplayMode('real', 'default');
+		$pdf->SetPrintHeader(false);
+		$pdf->SetPrintFooter(false);
+		$pdf->AddPage();
+		$pdf->writeHTML($html, true, false, true, false, '');
+		$pdf->Output('My-File-Name.pdf', 'I');
+		echo "<script>window.close();</script>";
 	}
 
 
