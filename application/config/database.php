@@ -77,7 +77,7 @@ $db['default'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
 	'username' => (ENVIRONMENT !== 'production') ? 'johan' : 'johan',
-	'password' => (ENVIRONMENT !== 'production') ? 'johan' : 'Oh5y7x9#',
+	'password' => (ENVIRONMENT !== 'production') ? 'Johan1234!!' : 'Johan1234!!',
 	'database' => (ENVIRONMENT !== 'production') ? 'admin_pcr_manage' : 'admin_pcr_manage',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
