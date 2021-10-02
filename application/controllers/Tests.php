@@ -28,7 +28,6 @@ class Tests extends CI_Controller
 
 	public function create()
 	{
-		$this->check_premissions_event('modify');
 
 		$data['title'] = 'Add tests';
 
@@ -54,7 +53,6 @@ class Tests extends CI_Controller
 
 	public function update($id)
 	{
-		$this->check_premissions_event('modify');
 
 		$data['title'] = 'Edit tests';
 
@@ -100,7 +98,6 @@ class Tests extends CI_Controller
 
 	public function delete($id)
 	{
-		$this->check_premissions_event('modify');
 
 		$this->tests_model->delete_test($id);
 
