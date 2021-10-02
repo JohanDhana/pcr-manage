@@ -23,7 +23,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = (ENVIRONMENT !== 'production') ? 'http://localhost/pcr-manage/' : 'https://hellosalon.al/';
+$config['base_url'] = (ENVIRONMENT !== 'production') ? 'https://hellosalon.al/' : 'https://hellosalon.al/';
 
 /*
 |--------------------------------------------------------------------------
