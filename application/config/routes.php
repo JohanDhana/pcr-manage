@@ -4,8 +4,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 $route['tests/list'] = 'tests/list';
 $route['tests/create'] = 'tests/create';
 $route['tests/update/(:any)'] = 'tests/update/$1';
-$route['tests/thank-email/(:any)'] = 'tests/thank_email/$1';
-$route['tests/(:any)'] = 'tests/view/$1';
+$route['tests/download-pdf/(:any)'] = 'tests/download_pdf/$1';
+$route['test/(:any)'] = 'tests/view/$1';
 $route['tests/(:any)/reservations'] = 'tests/reservations/$1';
 
 // $route['tests/(:any)'] = 'tests/view/$1';

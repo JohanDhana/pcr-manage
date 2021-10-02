@@ -27,24 +27,24 @@ class InstalledVersions
 private static $installed = array (
   'root' => 
   array (
-    'pretty_version' => 'dev-main',
-    'version' => 'dev-main',
+    'pretty_version' => 'dev-master',
+    'version' => 'dev-master',
     'aliases' => 
     array (
     ),
-    'reference' => '29451c388cf2b2de794b24df8765ad87ac15efae',
+    'reference' => '0122c05007deb357c298f1598f79d3945a1563ba',
     'name' => 'codeigniter/framework',
   ),
   'versions' => 
   array (
     'codeigniter/framework' => 
     array (
-      'pretty_version' => 'dev-main',
-      'version' => 'dev-main',
+      'pretty_version' => 'dev-master',
+      'version' => 'dev-master',
       'aliases' => 
       array (
       ),
-      'reference' => '29451c388cf2b2de794b24df8765ad87ac15efae',
+      'reference' => '0122c05007deb357c298f1598f79d3945a1563ba',
     ),
     'mikey179/vfsstream' => 
     array (
