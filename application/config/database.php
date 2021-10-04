@@ -76,9 +76,9 @@ $query_builder = TRUE;
 $db['default'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
-	'username' => (ENVIRONMENT !== 'production') ? 'johan' : 'johan',
-	'password' => (ENVIRONMENT !== 'production') ? 'Johan1234!!' : 'Johan1234!!',
-	'database' => (ENVIRONMENT !== 'production') ? 'admin_pcr_manage' : 'admin_pcr_manage',
+	'username' => (ENVIRONMENT !== 'production') ? 'root' : 'johan',
+	'password' => (ENVIRONMENT !== 'production') ? '' : 'Johan1234!!',
+	'database' => (ENVIRONMENT !== 'production') ? 'pcr-manage' : 'admin_pcr_manage',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
