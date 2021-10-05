@@ -1,11 +1,4 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
-
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-use PHPMailer\PHPMailer\SMTP;
-
-// define("RECAPTCHA_V3_SECRET_KEY", '6Ldl0nobAAAAALYBbv1GbHah52mJcXyGn43qufvO');
-
 class Tests_model extends CI_Model
 {
 	public function __construct()
@@ -23,7 +16,11 @@ class Tests_model extends CI_Model
 	public function get_test_by_id($id)
 	{
 		$query = $this->db->select('*')->get_where('tests', array('testId' => $id));
-		return $query->row_array();
+		$result = $query->row_array();
+		if (!$result) {
+			show_404();
+		}
+		return $result;
 	}
 
 	public function get_tests($search_term, $limit, $start)
@@ -50,7 +47,7 @@ class Tests_model extends CI_Model
 		$uniqid = 'TID' . uniqid();
 		$result_status = $this->input->post('test_results') === 'on' ? 1 : 0;
 		$name = 'qr-tests' . $uniqid;
-		$qr_data =   $this->generate_qrcode(base_url() . 'tests/' . $uniqid, $name);
+		$qr_data =   $this->generate_qrcode(base_url() . 'test/' . $uniqid, $name);
 
 		$data = array(
 			'country' => $this->input->post('country'),
@@ -132,42 +129,5 @@ class Tests_model extends CI_Model
 			'file'    => $dir . $save_name
 		);
 		return $return;
-	}
-
-	static public function send_email($emailTo, $username, $content, $subject = 'Here is the subject')
-	{
-
-		//Load Composer's autoloader
-		require 'vendor/autoload.php';
-
-		//Instantiation and passing `true` enables exceptions
-		$mail = new PHPMailer(true);
-
-		try {
-			//Server settings
-			// $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
-			$mail->isSMTP();                                            //Send using SMTP
-			$mail->Host       = 'smtp.zoho.eu';                     //Set the SMTP server to send through
-			$mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-			$mail->Username   = 'request@ihow.info';            //SMTP username
-			$mail->Password   = 'Jamatje123@';                                       //SMTP password
-			$mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         //Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
-			$mail->Port       = 587;                                    //TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
-
-			//Recipients
-			$mail->setFrom('request@ihow.info', 'Royal');
-			$mail->addAddress($emailTo, $username);     //Add a recipient
-
-
-			//Content
-			$mail->isHTML(true);                                  //Set email format to HTML
-			$mail->Subject = $subject;
-			$mail->Body    = $content;
-			$mail->AltBody = $content;
-
-			$mail->send();
-		} catch (Exception $e) {
-			echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
-		}
 	}
 }

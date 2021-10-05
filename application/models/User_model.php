@@ -32,6 +32,12 @@ class User_model extends CI_Model
 		}
 	}
 
+	public function reset_password($username, $password)
+	{
+		$this->db->update('users', ['password' => $password], ['username' => $username]);
+	}
+
+
 	// Check username exists
 	public function check_username_exists($username)
 	{

@@ -7,6 +7,7 @@ $route['tests/update/(:any)'] = 'tests/update/$1';
 $route['tests/download-pdf/(:any)'] = 'tests/download_pdf/$1';
 $route['test/(:any)'] = 'tests/view/$1';
 $route['tests/(:any)/reservations'] = 'tests/reservations/$1';
+$route['users/reset-password'] = 'users/reset_password';
 
 // $route['tests/(:any)'] = 'tests/view/$1';
 $route['tests'] = 'tests/index';

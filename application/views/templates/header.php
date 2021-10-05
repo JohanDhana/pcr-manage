@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Royal Dashboard</title>
+    <title>Dashboard</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="<?= base_url('assets/css/style.css'); ?>">
     <!-- CSS only -->
@@ -10,21 +10,20 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet" />
-    <link rel="icon" type="image/png" href="<?= base_url('assets/images/royal-g-logo-200-200.png') ?>" sizes="32x32">
+    <link rel="icon" type="image/png" href="<?= base_url('assets/images/logo.png') ?>" sizes="32x32">
 </head>
 
 <body>
     <?php if ($this->session->userdata('logged_in')) : ?>
         <header class="navbar sticky-top navbar-light bg-light flex-md-nowrap p-0 shadow">
-            <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 bg-dark text-white py-2" href="#"><img src="<?= base_url('assets/images/royal-g-logo-183-49.png') ?>" style="width:170px; height: 45px;" /></a>
+            <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 bg-dark text-white py-2" href="#"><img src="<?= base_url('assets/images/logo.png') ?>" style="width:170px; height: 45px;" /></a>
             <div class="dropdown admin-desktop">
                 <a href="#" class="btn dropdown-toggle py-0" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                    <!-- <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2"> -->
                     <strong><?= $this->session->userdata('username'); ?></strong>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuLink">
+                    <li><a class="dropdown-item" href="<?= base_url('users/reset-password'); ?>">Reset Password</a></li>
                     <li><a class="dropdown-item" href="<?= base_url('users/logout'); ?>">Logout</a></li>
-                    <!-- <li><a class="dropdown-item" href="#">Another action</a></li> -->
                 </ul>
             </div>
             <button class="navbar-toggler position-absolute d-md-none collapsed border-0" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">

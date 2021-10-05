@@ -6,14 +6,18 @@ class Tests extends CI_Controller
 	public function __construct()
 	{
 		parent::__construct();
-		// Check login
-		if (!$this->session->userdata('logged_in')) {
-			redirect('users/login');
-		}
 
 		$this->load->helper('utils');
 		$this->load->helper('url', 'form');
 		$this->load->library("pagination");
+	}
+
+	public function check_login()
+	{
+		// Check login
+		if (!$this->session->userdata('logged_in')) {
+			redirect('users/login');
+		}
 	}
 
 
@@ -28,6 +32,7 @@ class Tests extends CI_Controller
 
 	public function create()
 	{
+		$this->check_login();
 
 		$data['title'] = 'Add tests';
 
@@ -53,6 +58,7 @@ class Tests extends CI_Controller
 
 	public function update($id)
 	{
+		$this->check_login();
 
 		$data['title'] = 'Edit tests';
 
@@ -74,7 +80,7 @@ class Tests extends CI_Controller
 		} else {
 			$this->tests_model->update_tests($id);
 			// Set message
-			$this->session->set_flashdata('created', 'Your event has been edited');
+			$this->session->set_flashdata('created', 'Your test has been edited');
 			header("Refresh:0");
 		}
 	}
@@ -82,6 +88,8 @@ class Tests extends CI_Controller
 
 	public function list()
 	{
+		$this->check_login();
+
 		$search_term = $this->input->get('q');
 		$config = get_pagination_config();
 		$config["base_url"] = base_url() . "tests/list";
@@ -98,6 +106,7 @@ class Tests extends CI_Controller
 
 	public function delete($id)
 	{
+		$this->check_login();
 
 		$this->tests_model->delete_test($id);
 
@@ -109,6 +118,8 @@ class Tests extends CI_Controller
 
 	public function download_pdf($id)
 	{
+		$this->check_login();
+
 		$data['test'] = $this->tests_model->get_test_by_id($id);
 		$html = $this->load->view('email_template/pdf-template', $data, TRUE);
 		$this->load->library('pdf');
