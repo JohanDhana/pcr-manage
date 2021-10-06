@@ -171,7 +171,7 @@
                 <div class="col-4 pt-1">
                 </div>
                 <div class="col-4 text-center">
-                    <a class="blog-header-logo text-dark" href="#">Clinic</a>
+                    <a class="blog-header-logo text-dark" href="#"><img style="max-width: 150px;" alt="popo" src="<?= base_url('assets/images/logo.png') ?>" /></a>
                 </div>
                 <div class="col-4 d-flex justify-content-end align-items-center">
                 </div>
@@ -184,7 +184,7 @@
             <div class="row">
                 <div class="col-md-12 text-center">
                     <h3 class="fw-bold py-3 text-capitalize">
-                        <span style="background-color: #3fbbc0;" class="badge ">PCR test results</span>
+                        <span style="background-color: #3fbbc0;" class="badge ">Rapid Test Covid 19</span>
                     </h3>
                 </div>
             </div>
@@ -210,6 +210,14 @@
                                     <td><?= $test['test_unique_nr'] ?></td>
                                 </tr>
                                 <tr>
+                                    <th scope="row">Test Date</th>
+                                    <td><?= $test['test_date'] ?></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Added At</th>
+                                    <td><?= $test['added_at'] ?></td>
+                                </tr>
+                                <tr>
                                     <th scope="row">Result</th>
                                     <td><?= boolval($test['test_results']) ? 'Positive' : 'Negative' ?></td>
                                 </tr>
@@ -229,10 +237,10 @@
 
                     <div class="col-lg-5 col-md-6">
                         <div class="footer-info">
-                            <h3>Medicio</h3>
+                            <h3>Mio Laborator</h3>
                             <p>
-                                A108 Adam Street <br>
-                                NY 535022, USA<br><br>
+                                Adresa R Partizani ,L 13 <br>
+                                Korce, Albania<br><br>
                                 <strong>Phone:</strong> +1 5589 55488 55<br>
                                 <strong>Email:</strong> info@example.com<br>
                             </p>
@@ -246,7 +254,7 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-4 col-md-6 footer-links">
+                    <!-- <div class="col-lg-4 col-md-6 footer-links">
                         <h4>Useful Links</h4>
                         <ul>
                             <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
@@ -266,14 +274,14 @@
                             <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
                             <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
                         </ul>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
 
         <div class="container">
             <div class="copyright">
-                © Copyright <strong><span>Medicio</span></strong>. All Rights Reserved
+                © Copyright <strong><span>Mio Laborator</span></strong>. All Rights Reserved
             </div>
             <div class="credits">
                 Designed by <a>Hello Studio</a>
