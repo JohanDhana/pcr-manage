@@ -37,9 +37,7 @@ class Tests extends CI_Controller
 		$data['title'] = 'Add tests';
 
 		$this->form_validation->set_rules('country', 'country', 'required');
-		// $this->form_validation->set_rules('test_results', 'test_results', 'required');
 		$this->form_validation->set_rules('test_unique_nr', 'test_unique_nr', 'required');
-		// $this->form_validation->set_rules('test_save_date', 'test_save_date', 'required');
 		$this->form_validation->set_rules('test_date', 'test_date', 'required');
 		$this->form_validation->set_rules('personal_nr', 'personal_nr', 'required');
 		$this->form_validation->set_rules('birthday', 'birthday', 'required');
@@ -63,9 +61,7 @@ class Tests extends CI_Controller
 		$data['title'] = 'Edit tests';
 
 		$this->form_validation->set_rules('country', 'country', 'required');
-		// $this->form_validation->set_rules('test_results', 'test_results', 'required');
 		$this->form_validation->set_rules('test_unique_nr', 'test_unique_nr', 'required');
-		// $this->form_validation->set_rules('test_save_date', 'test_save_date', 'required');
 		$this->form_validation->set_rules('test_date', 'test_date', 'required');
 		$this->form_validation->set_rules('personal_nr', 'personal_nr', 'required');
 		$this->form_validation->set_rules('birthday', 'birthday', 'required');
@@ -119,6 +115,10 @@ class Tests extends CI_Controller
 	public function download_pdf($id)
 	{
 		$this->check_login();
+		$download_mode = 'I';
+		if ($this->input->get('mode') === 'D') {
+			$download_mode = 'D';
+		}
 
 		$data['test'] = $this->tests_model->get_test_by_id($id);
 		$html = $this->load->view('email_template/pdf-template', $data, TRUE);
@@ -135,7 +135,7 @@ class Tests extends CI_Controller
 		$pdf->SetPrintFooter(false);
 		$pdf->AddPage();
 		$pdf->writeHTML($html, true, false, true, false, '');
-		$pdf->Output('My-File-Name.pdf', 'I');
+		$pdf->Output('test-' . $data['test']['testId'] . '.pdf', $download_mode);
 		echo "<script>window.close();</script>";
 	}
 

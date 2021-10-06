@@ -35,13 +35,6 @@ class Tests_model extends CI_Model
 		return	$query->result_array();
 	}
 
-
-	public function get_test_image($test_id)
-	{
-		$query = $this->db->select('image')->where('testsId', $test_id)->get('tests');
-		return $query->row_array();
-	}
-
 	public function create_test()
 	{
 		$uniqid = 'TID' . uniqid();
@@ -62,7 +55,7 @@ class Tests_model extends CI_Model
 			'testId' =>  $uniqid,
 		);
 		$this->db->insert('tests', $data);
-		$this->session->set_flashdata('created', 'Your test was created! Check your test list.');
+		$this->session->set_flashdata('created', 'Your test was created! Click <a href="' . base_url('tests/download_pdf/' . $uniqid) . '?mode=D' . '" target="_blank"> here</a> to downlopad PDF.');
 	}
 
 

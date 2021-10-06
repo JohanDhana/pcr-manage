@@ -28,6 +28,12 @@
       </tr>
     </thead>
     <tbody>
+      <?php if (!$testList) { ?>
+        <tr>
+          <td colspan="7" style="text-align: center;">No data!</td>
+        </tr>
+      <?php } ?>
+
       <?php foreach ($testList as $key => $test) { ?>
         <tr>
           <th scope="row">

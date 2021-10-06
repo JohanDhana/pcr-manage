@@ -13,7 +13,7 @@
 
 				setTimeout(function() {
 					flashAlert.style.display = "none";
-				}, 3500);
+				}, 5000);
 			}
 		</script>
 
