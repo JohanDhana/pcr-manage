@@ -20,25 +20,19 @@
                 <td> </td>
             </tr>
             <tr>
-                <td></td>
-                <td>
+                <td colspan="3">
                     <h1>Rapid Test Covid 19</h1>
                 </td>
-                <td></td>
             </tr>
             <tr>
-                <td></td>
-                <td>
+                <td colspan="3">
                     <h1><?= $test['name'] ?> <?= $test['surname'] ?></h1>
                 </td>
-                <td></td>
             </tr>
             <tr>
-                <td></td>
-                <td>
+                <td colspan="3">
                     <h2>Please find your test results below:</h2>
                 </td>
-                <td></td>
             </tr>
             <tr>
                 <td></td>
@@ -120,6 +114,12 @@
                 <td style="text-align: right; width: 70%;">
                     Dr, Majlinda Germenji , Mio Laborator
                 </td>
+            </tr>
+            <tr>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
             </tr>
             <tr>
                 <td></td>
