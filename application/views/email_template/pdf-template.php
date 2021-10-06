@@ -76,6 +76,11 @@
                                         <td><?= strtoupper(trim($test['personal_nr'])) ?></td>
                                     </tr>
                                     <tr>
+                                        <td>Date registered:</td>
+                                        <td> </td>
+                                        <td><?= strtoupper(trim($test['added_at'])) ?></td>
+                                    </tr>
+                                    <tr>
                                         <td>Sample Taken: </td>
                                         <td></td>
                                         <td><?= strtoupper(trim($test['test_date'])) ?></td>

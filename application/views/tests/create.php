@@ -32,7 +32,7 @@
 
     <div class="form-group mb-3">
       <label>Date the test was done </label>
-      <input type="date" class="form-control" required name="test_date" placeholder="Add date">
+      <input type="datetime-local" class="form-control" required name="test_date" placeholder="Add date">
     </div>
 
     <div class="form-group mb-3">
