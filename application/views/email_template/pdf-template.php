@@ -31,6 +31,11 @@
             </tr>
             <tr>
                 <td colspan="3">
+                    <h4>The test has been taken from nasopharynx and is performed with test SARS coV2-Ag from AMP diagnostics</h4>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
                     <h2>Please find your test results below:</h2>
                 </td>
             </tr>
@@ -48,32 +53,32 @@
                                     <tr>
                                         <td>Booking Reference:</td>
                                         <td></td>
-                                        <td><?= trim($test['testId']) ?></td>
+                                        <td><?= strtoupper(trim($test['testId'])) ?></td>
                                     </tr>
                                     <tr>
                                         <td>Test ID:</td>
                                         <td></td>
-                                        <td><?= trim($test['test_unique_nr']) ?></td>
+                                        <td><?= strtoupper(trim($test['test_unique_nr'])) ?></td>
                                     </tr>
                                     <tr>
                                         <td>Birthday</td>
                                         <td></td>
-                                        <td><?= trim($test['birthday']) ?></td>
+                                        <td><?= strtoupper(trim($test['birthday'])) ?></td>
                                     </tr>
                                     <tr>
                                         <td>Country</td>
                                         <td></td>
-                                        <td><?= trim($test['country']) ?></td>
+                                        <td><?= strtoupper(trim($test['country'])) ?></td>
                                     </tr>
                                     <tr>
                                         <td>Passport Number:</td>
                                         <td> </td>
-                                        <td><?= trim($test['personal_nr']) ?></td>
+                                        <td><?= strtoupper(trim($test['personal_nr'])) ?></td>
                                     </tr>
                                     <tr>
                                         <td>Sample Taken: </td>
                                         <td></td>
-                                        <td><?= trim($test['test_date']) ?></td>
+                                        <td><?= strtoupper(trim($test['test_date'])) ?></td>
                                     </tr>
                                     <tr>
                                         <td>Test Type:</td>
@@ -115,12 +120,7 @@
                     Dr, Majlinda Germenji , Mio Laborator
                 </td>
             </tr>
-            <tr>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-            </tr>
+
             <tr>
                 <td></td>
             </tr>
