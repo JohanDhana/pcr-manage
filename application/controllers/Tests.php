@@ -70,6 +70,7 @@ class Tests extends CI_Controller
 
 		if ($this->form_validation->run() === FALSE) {
 			$data['test'] = $this->tests_model->get_test_by_id($id);
+			$data['test']['test_date'] = str_replace(' ', 'T', $data['test']['test_date']);
 			$this->load->view('templates/header');
 			$this->load->view('tests/edit', $data);
 			$this->load->view('templates/footer');
