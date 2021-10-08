@@ -159,7 +159,7 @@
         </tbody>
         <tr>
             <td colspan="2">
-                ©2021 DNAFIT Life Sciences Limited. Registered in Albania
+                ©2021 Registered in Albania
                 under registration number G85522075I <br />
                 Registered office address R Partizani ,L 13 korce.
             </td>
