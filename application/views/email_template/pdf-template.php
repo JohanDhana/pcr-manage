@@ -42,7 +42,7 @@
             <tr>
                 <td></td>
             </tr>
-            <tr style="background-color: #f2f8fb;color: #003865;font-weight: bold;text-align: center; ">
+            <tr style="color: #003865;font-weight: bold;text-align: center; ">
                 <td colspan="3" style="text-align: center;">
                     <table border="0" cellspacing="2">
                         <thead></thead>
