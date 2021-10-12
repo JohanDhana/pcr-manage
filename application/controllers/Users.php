@@ -6,6 +6,10 @@ class Users extends CI_Controller
 	{
 		$data['title'] = 'Sign In';
 
+		if ($this->session->has_userdata('logged_in')) {
+			redirect('tests/list');
+		}
+
 		$this->form_validation->set_rules('username', 'Username', 'required');
 		$this->form_validation->set_rules('password', 'Password', 'required');
 
