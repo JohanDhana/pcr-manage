@@ -3,7 +3,7 @@
   <div class="col-md-6 offset-md-3 pt-4 pb-5">
     <form action="<?= base_url('tests/list') ?>" method="get">
       <div class="input-group">
-        <input type="text" class="form-control input-search-text" name="q" required="" placeholder="Search authors...">
+        <input type="text" class="form-control input-search-text" name="q" required="" placeholder="Search tests...">
         <div class="input-group-append">
           <button class="btn btn-secondary btn-search" type="submit">
             <i class="bi bi-search"></i> </button>
