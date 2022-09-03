@@ -18,10 +18,6 @@ Geneerate pdf with QR code whithin the CMS
 
 3-Configure the config file(application/config/config.php)
 
-## Configuration
-
--PayPal configuration : 
-
 ## Admin Dashboard
 To access the admin dashboard (yourprojecturl/login)
 
